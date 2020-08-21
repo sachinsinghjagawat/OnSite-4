@@ -36,12 +36,12 @@ public class MainActivity extends AppCompatActivity {
         checkPermission(Manifest.permission.READ_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
 
         String rootpath = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.getExternalStorageState())); // this line is very important if we dont know the path of the storage
-        File path = new File(Environment.getExternalStorageDirectory() + "");
+        File path = new File("/storage/emulated/0/");
         File list[] = path.listFiles();
 
         for( int i=0; i< list.length; i++) {
             Log.i("bhai ka nam", list[i].getName());
-            NameClass nameClass = new NameClass(list[i].getName() , Environment.getExternalStorageDirectory() + list[i].getName() , false);
+            NameClass nameClass = new NameClass(list[i].getName() , "/storage/emulated/0/" + list[i].getName() , false);
             nameClassList.add(nameClass);
         }
 
